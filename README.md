@@ -8,15 +8,15 @@ Initialize your workspace to develop and run code with the Cern ROOT framework. 
 
 Open the **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`).
 
-![Executing configure command](images/executing_command.png)
+![Executing configure command](https://github.com/LeoWillmann/cern-root-development-environment/blob/master/images/executing_command.png?raw=true)
 
 The extension will create or update `.vscode/tasks.json` (contains build tasks). These tasks can be executed **Command Palette** and running `Tasks: Run Task` This gives you a task selection menu. Alternatively create a keyboard shortcut for that command.
 
-![Executing configure command](images/buildTasks.png)
+![Executing configure command](https://github.com/LeoWillmann/cern-root-development-environment/blob/master/images/buildTasks.png?raw=true)
 
 To debug, set breakpoints in your c++ code and press **F5** or select **Run -> Start Debugging** to start debugging.
 
-![Executing configure command](images/debugger.png)
+![Executing configure command](https://github.com/LeoWillmann/cern-root-development-environment/blob/master/images/debugger.png?raw=true)
 
 All tasks and debugging actions execute on the file that is currently open in the editor. If you have a single entrypoint such as a `main.cpp` it is encouraged to change the `${file}` mentions in [.vscode/tasks.json](.vscode/tasks.json).
 
