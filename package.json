@@ -1,23 +1,64 @@
 {
   "name": "cern-root-development-environment",
   "displayName": "Cern ROOT Development Environment",
-  "description": "Initialize your workspace to develop and run code with the Cern ROOT framework.",
+  "description": "Initialize your workspace to develop and run code with the Cern ROOT framework. This extension adds the options to enable intellisense for ROOT and tasks to run (on the ROOT interpreter) and build c++ code.",
   "version": "0.0.1",
+  "publisher": "LeoWillmann",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "engines": {
     "vscode": "^1.106.1"
   },
+  "author": {
+    "name": "Leo Willmann"
+  },
   "categories": [
+    "Programming Languages",
+    "Debuggers",
     "Other"
   ],
-  "activationEvents": [],
   "main": "./dist/extension.js",
+  "extensionDependencies": [
+    "ms-vscode.cpptools"
+  ],
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  },
+  "pricing": "Free",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeoWillmann/cern-root-development-environment.git"
+  },
+  "homepage": "https://github.com/LeoWillmann/cern-root-development-environment/blob/master/README.md",
+  "activationEvents": [],
   "contributes": {
     "commands": [
       {
-        "command": "cern-root-development-environment.helloWorld",
-        "title": "Hello World"
+        "command": "cernRoot.configureEnvironment",
+        "title": "Cern ROOT: Configure the workspace environment"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Cern ROOT Environment",
+      "properties": {
+        "cernRoot.intellisense": {
+          "type": "boolean",
+          "default": true,
+          "description": "On generation, adds cern ROOT header files into the include path of the intellisense settings"
+        },
+        "cernRoot.buildAndRunTasks": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "On generation create a build and run task in [.vscode/tasks.json](.vscode/tasks.json)"
+        },
+        "cernRoot.debuggingConfiguration": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "On generation creates a launch debug configuration in [.vscode/launch.json](.vscode/launch.json) and a debug build task in [.vscode/tasks.json](.vscode/tasks.json)."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

@@ -1,71 +1,45 @@
 # cern-root-development-environment README
 
-This is the README for your extension "cern-root-development-environment". After writing up a brief description, we recommend including the following sections.
+Initialize your workspace to develop and run code with the Cern ROOT framework. This extension adds the options to enable intellisense for ROOT and create tasks to run (on the ROOT interpreter) and build c++ code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* `cernRoot.configureEnvironment` command to enable intellisense and add tasks and launch debug configurations.
 
-For example if there is an image subfolder under your extension project workspace:
+Open the **Command Palette** (`Ctrl+Shift+P` / `Cmd+Shift+P`).
 
-\!\[feature X\]\(images/feature-x.png\)
+![Executing configure command](images/executing_command.png)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+The extension will create or update `.vscode/tasks.json` (contains build tasks). These tasks can be executed **Command Palette** and running `Tasks: Run Task` This gives you a task selection menu. Alternatively create a keyboard shortcut for that command.
+
+![Executing configure command](images/buildTasks.png)
+
+To debug, set breakpoints in your c++ code and press **F5** or select **Run -> Start Debugging** to start debugging.
+
+![Executing configure command](images/debugger.png)
+
+All tasks and debugging actions execute on the file that is currently open in the editor. If you have a single entrypoint such as a `main.cpp` it is encouraged to change the `${file}` mentions in [.vscode/tasks.json](.vscode/tasks.json).
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Need to have `ROOTSYS` environment variable configured to point to a valid root install.
+
+This extension is dependent on the `ms-vscode.cpptools` extension to provide intellisense.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Change what actions are completed when the `cernRoot.configureEnvironment` command is called
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `cernRoot.intellisense`, enables intellisense generation.
+* `cernRoot.buildAndRunTasks`, creates build and run tasks.
+* `cernRoot.debuggingConfiguration`, creates debug build task and debug launch config.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+None
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+First release
