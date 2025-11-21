@@ -37,9 +37,3 @@ Change what actions are completed when the `cernRoot.configureEnvironment` comma
 ## Known Issues
 
 None
-
-## Release Notes
-
-### 0.0.1
-
-First release

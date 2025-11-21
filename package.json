@@ -2,7 +2,7 @@
   "name": "cern-root-development-environment",
   "displayName": "Cern ROOT Development Environment",
   "description": "Initialize your workspace to develop and run code with the Cern ROOT framework. This extension adds the options to enable intellisense for ROOT and tasks to run (on the ROOT interpreter) and build c++ code.",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "publisher": "LeoWillmann",
   "license": "SEE LICENSE IN LICENSE.txt",
   "engines": {
@@ -22,7 +22,7 @@
     "ms-vscode.cpptools"
   ],
   "galleryBanner": {
-    "color": "#C80000",
+    "color": "#b3b3b3",
     "theme": "dark"
   },
   "pricing": "Free",
