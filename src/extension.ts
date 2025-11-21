@@ -23,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showErrorMessage("No workspace folder open.");
         return;
       }
-      const indentation = 4; //TODO: set to workspace indentation
+      const indentation = vscode.workspace.getConfiguration("editor").get<number>("tabSize") || 2;
       if (config.get("buildAndRunTasks")) {
         root.injectTasks([data.buildTask, data.runTask], vscodeDir, indentation);
       }
